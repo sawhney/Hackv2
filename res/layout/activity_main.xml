@@ -8,9 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/bSearch"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignLeft="@+id/bScanner"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="56dp"
+        android:text="@string/search" />
+
+    <Button
+        android:id="@+id/bScanner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bSearch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:gravity="center"
+        android:text="@string/scanner" />
 
 </RelativeLayout>
