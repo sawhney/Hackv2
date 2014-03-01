@@ -1,6 +1,7 @@
 package com.example.hackv2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,9 +14,10 @@ import com.mirasense.scanditsdk.interfaces.ScanditSDKListener;
 
 public class BarcodeActivity extends Activity implements ScanditSDKListener {
 
+	public static final String BARCODE_KEY = "barcode key";
 	// The main object for recognizing a displaying barcodes.
 	private ScanditSDK mBarcodePicker;
-
+	
 	// Scandit APK goes here
 	private static String sScanditSdkAppKey;
 
@@ -38,6 +40,7 @@ public class BarcodeActivity extends Activity implements ScanditSDKListener {
 	@Override
 	public void onBackPressed() {
 		mBarcodePicker.stopScanning();
+		setResult(RESULT_CANCELED);
 		finish();
 	}
 
@@ -74,8 +77,13 @@ public class BarcodeActivity extends Activity implements ScanditSDKListener {
 			}
 		}
 
-		Toast.makeText(this, symbology + ": " + cleanedBarcode,
-				Toast.LENGTH_LONG).show();
+//		Toast.makeText(this, symbology + ": " + cleanedBarcode,
+//				Toast.LENGTH_LONG).show();
+		mBarcodePicker.stopScanning();
+		Intent result = new Intent(BarcodeActivity.this, ProductActivity.class);
+		result.putExtra(BARCODE_KEY, cleanedBarcode);
+		startActivity(result);
+		finish();
 		// Example code that would typically be used in a real-world app using
 		// the Scandit SDK.
 		/*
@@ -88,7 +96,7 @@ public class BarcodeActivity extends Activity implements ScanditSDKListener {
 		 * // Stop recognition to save resources. mBarcodePicker.stopScanning();
 		 */
 	}
-
+	
 	private void initializeAndStartBarcodeScanning() {
 		// Switch to full screen.
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,

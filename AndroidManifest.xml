@@ -9,6 +9,7 @@
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature
@@ -36,6 +37,10 @@
             android:name="com.example.hackv2.BarcodeActivity"
             android:label="@string/title_activity_barcode"
             android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name="com.example.hackv2.ProductActivity"
+            android:label="@string/title_activity_product" >
         </activity>
     </application>
 

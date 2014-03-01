@@ -7,5 +7,7 @@
     <string name="title_activity_barcode">BarcodeActivity</string>
     <string name="scanner">Start Scanner</string>
     <string name="search">Search for foods</string>
+    <string name="title_activity_product">ProductActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

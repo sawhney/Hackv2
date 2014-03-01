@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,8 @@ public class MainActivity extends Activity implements ScanditSDKListener {
 
 	// The main object for scanning barcodes.
 	private ScanditSDKBarcodePicker mBarcodePicker;
+	public static final int BARCODE_REQUEST = 1001;
+	public static final String TAG = "Hackv2: MainActivity: ";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
