@@ -17,11 +17,12 @@ public class BarcodeActivity extends Activity implements ScanditSDKListener {
 	private ScanditSDK mBarcodePicker;
 
 	// Scandit APK goes here
-	public static final String sScanditSdkAppKey = "";
+	private static String sScanditSdkAppKey;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		sScanditSdkAppKey = getString(R.string.scandit_key);
 		initializeAndStartBarcodeScanning();
 	}
 
