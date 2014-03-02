@@ -10,7 +10,43 @@
 
     <TextView
         android:id="@+id/titleText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp" />
+
+    <RatingBar
+        android:id="@+id/rbFood"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:numStars="5" />
+
+    <Button
+        android:id="@+id/bRating"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rbFood"
+        android:text="@string/rate" />
+
+    <Button
+        android:id="@+id/bWrite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bRating"
+        android:text="@string/write_review" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/bWrite"
+        android:layout_below="@id/bWrite"
+        android:text="Result : "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 
 </RelativeLayout>
