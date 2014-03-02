@@ -42,6 +42,10 @@
             android:name="com.example.hackv2.ProductActivity"
             android:label="@string/title_activity_product" >
         </activity>
+        <activity
+            android:name="com.example.hackv2.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
     </application>
 
 </manifest>
