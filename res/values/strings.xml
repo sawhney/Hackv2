@@ -10,4 +10,22 @@
     <string name="title_activity_product">ProductActivity</string>
     <string name="hello_world">Hello world!</string>
 
+    <string name="unselect">Unselect all</string>
+    <string name="select">Select all</string>
+    <string name="ContentDescription">Image from gallery</string>
+    <string name="camera">Take a picture</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="username">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="invalid_login">Incorrect email or password</string>
+    <string name="register">Register</string>
+    <string name="new_account">Sign up for Felina</string>
+    <string name="name">Name</string>
+    <string name="upload">Upload</string>
+
+    <color name="gray_button_bar">#27292b</color>
+    <color name="light_blue_login">#154E94</color>
+    <color name="dark_blue_login">#10253E</color>
+    
 </resources>

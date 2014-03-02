@@ -7,7 +7,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
+	
 
+	    
     <Button
         android:id="@+id/bSearch"
         android:layout_width="fill_parent"
@@ -26,5 +28,15 @@
         android:layout_marginBottom="14dp"
         android:gravity="center"
         android:text="@string/scanner" />
-
+    
+    <Button
+        android:id="@+id/bLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bScanner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:gravity="center"
+        android:text="@string/login" />
+    
 </RelativeLayout>
