@@ -11,5 +11,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="rate">Rate This!</string>
     <string name="write_review">Write a review</string>
+    <string name="submit_review">Submit Review</string>
+    <string name="hint_review">Write review....</string>
 
 </resources>

@@ -6,8 +6,11 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -15,13 +18,13 @@ import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.Toast;
 
 public class ProductActivity extends Activity implements
-		OnRatingBarChangeListener {
+		OnRatingBarChangeListener, OnClickListener {
 
 	HttpRequestClient mClient;
 	ProgressDialog dialog;
 	TextView titleText;
 	RatingBar ratingBar;
-	Button ratingButton;
+	Button ratingButton, reviewButton;
 	TextView ratingText;
 
 	@Override
@@ -38,6 +41,21 @@ public class ProductActivity extends Activity implements
 		ratingText = (TextView) findViewById(R.id.tvResult);
 		((RatingBar) findViewById(R.id.rbFood))
 				.setOnRatingBarChangeListener(this);
+		wButton();
+	}
+
+	public void wButton() {
+		Button writeReview = (Button) findViewById(R.id.bWrite);
+		writeReview.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(ProductActivity.this,
+						SendReview.class);
+				startActivity(intent);
+				finish();
+			}
+		});
 	}
 
 	public void setTitle(String barcode) {
@@ -67,6 +85,12 @@ public class ProductActivity extends Activity implements
 			boolean fromTouch) {
 		final int numStars = ratingBar.getNumStars();
 		ratingText.setText(rating + "/" + numStars);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
