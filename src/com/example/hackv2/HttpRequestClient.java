@@ -1,7 +1,6 @@
 package com.example.hackv2;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
@@ -26,16 +25,12 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 public class HttpRequestClient {
@@ -66,7 +61,8 @@ public class HttpRequestClient {
 				JSONObject res = null;
 				try {
 				    HttpResponse response = mClient.execute(httpHost, req);
-				    res = getJSON(response);				    
+				    res = getJSON(response);
+				    response.getEntity().consumeContent();
 				    //Log.d("Http Response:",  mClient.getCookieStore().getCookies().toString());
 				} catch (ClientProtocolException e) {
 				    // writing exception to log
@@ -92,7 +88,7 @@ public class HttpRequestClient {
 			e.printStackTrace();
 		}
 	    ex.shutdown();
-	    
+
 	    return res;
 	}
 		
@@ -261,7 +257,6 @@ public class HttpRequestClient {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-
 		return json;
 	}
 }

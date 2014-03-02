@@ -24,9 +24,10 @@
     <string name="login">Log In</string>
     <string name="invalid_login">Incorrect email or password</string>
     <string name="register">Register</string>
-    <string name="new_account">Sign up for Felina</string>
+    <string name="new_account">Sign up</string>
     <string name="name">Name</string>
     <string name="upload">Upload</string>
+
 
     <color name="gray_button_bar">#27292b</color>
     <color name="light_blue_login">#154E94</color>
